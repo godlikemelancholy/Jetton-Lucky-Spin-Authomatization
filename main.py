@@ -1,18 +1,6 @@
 from utils import load_sessions, spin
 import threading
-from art import text2art
-import os
 from queue import Queue
-from time import sleep
-
-
-def intro():
-    print(text2art("Umbrella", "tarty1"))
-    sleep(1.5)
-    os.system("cls")
-    print(text2art("Development", "tarty1"))
-    sleep(1.5)
-    os.system("cls")
 
 
 def worker(queue, thread_id):
@@ -23,7 +11,6 @@ def worker(queue, thread_id):
 
 
 def main():
-    intro()
     num_threads = int(input("Введите количество потоков: "))
     sessions = load_sessions()
 
